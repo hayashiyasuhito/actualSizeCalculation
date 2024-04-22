@@ -19,8 +19,7 @@ uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 def velocityCalculation(x,fov,screenHeight,settlingSpeed):
     fov_radians = math.radians(fov)
     t_cross = screenHeight/x
-    theta = fov_radians * (x / screenHeight) * t_cross
-    angular_speed = theta/t_cross
+    angular_speed = fov_radians/t_cross
     distance = settlingSpeed/angular_speed
     return distance
 
